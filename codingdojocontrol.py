@@ -11,7 +11,7 @@ class CodingDojo(QtGui.QDialog):
     def __init__(self):
         QtGui.QDialog.__init__(self)
         
-        self.testDirectory = "/tmp/codingdojos"
+        self.testDirectory = "."
         self.timerCountDown = "5"
         self.running = False
         
@@ -142,7 +142,15 @@ class CodingEngine(QtCore.QThread):
             print "Running files from %s" % self.p.testDirectory
             os.chdir(self.p.testDirectory)
             for filename in os.listdir("."):
+                # not dot files 
                 if re.search("^\.", filename):
+                    continue
+                # python only - include other?
+                if not re.search("\.py$", filename):
+                    continue
+                # not this file
+                print sys.argv[0]
+                if re.search(filename, sys.argv[0]):
                     continue
                 print "checking file %s" % (filename)
                 try:
