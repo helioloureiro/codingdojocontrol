@@ -23,3 +23,24 @@ TODO:
  * play a sound once time reaches zero
  * change display collor in the last 10 seconds?
  * world domination
+
+Requirements
+============
+ * python-qt4 
+
+Usage
+=====
+Just clone this repo:
+ git clone https://github.com/helioloureiro/codingdojocontrol.git codingdojo
+
+Into this directory, codingdojo, it will run any .py script and check output result
+for 0 (ok) or not.
+
+So create your challenge, the create a script.  Before the pilot start to code,
+press button "Start".  It will countdown till zero.
+
+If for some reason you need to start over the counter, just press "Reset".
+
+"Configure" button allows you to select other directory to place your coding 
+dojo's code, and change the default time from 5 minutes (300 seconds).
+
